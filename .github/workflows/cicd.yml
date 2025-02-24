@@ -92,7 +92,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ needs.tag.outputs.new-tag }}
-        release_name: ${{ needs.tag.outputs.new-tag }}
+        tag_name: ${{ needs.tag.outputs.new-tag-version }}
+        release_name: ${{ needs.tag.outputs.new-tag-version }}
         draft: false
         prerelease: false
