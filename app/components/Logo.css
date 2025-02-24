@@ -1,0 +1,62 @@
+.logoContainer {
+    display: flex;
+    padding: 5px;
+    font-family: 'Source Code Pro', monospace;  
+    max-width: 600px;  
+    margin-left: auto;
+    margin-right: auto;
+}
+.logoQuoteStyle {
+    color: #FFFFFF;
+}
+  
+.logoBraceStyle {
+    color: #808080;
+}
+
+.logoVariableStyle {
+    color: #9cdbfc;
+}
+
+.logoValueStyle {
+    color: #ce9178;
+}
+
+@media (max-width: 625px) {
+    .logoContainer {
+        padding: 5px;
+        display: block;
+        font-family: 'Source Code Pro', monospace;  
+        width: 100%;  
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .logoBraceContainer {
+        width: 100%;
+    }
+
+    .logoVariableContainer {
+        padding-left: 50px;
+    }
+
+    .logoValueContainer {
+        padding-left: 100px;
+    }
+
+    .logoQuoteStyle {
+        color: #FFFFFF;
+    }
+      
+    .logoBraceStyle {
+        color: #808080;
+    }
+    
+    .logoVariableStyle {
+        color: #9cdbfc;
+    }
+    
+    .logoValueStyle {
+        color: #ce9178;
+    }   
+}
