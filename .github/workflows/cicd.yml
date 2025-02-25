@@ -41,6 +41,8 @@ jobs:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      contents: write
     outputs:
       new-tag: ${{ steps.ccv.outputs.new-tag }}
       new-tag-version: ${{ steps.ccv.outputs.new-tag-version }}
@@ -60,7 +62,7 @@ jobs:
     if: needs.tag.outputs.new-tag == 'true'
     environment: prod
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
     - name: artifact
@@ -90,7 +92,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ needs.tag.outputs.new-tag }}
-        release_name: ${{ needs.tag.outputs.new-tag }}
+        tag_name: ${{ needs.tag.outputs.new-tag-version }}
+        release_name: ${{ needs.tag.outputs.new-tag-version }}
         draft: false
         prerelease: false
